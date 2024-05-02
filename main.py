@@ -52,9 +52,7 @@ def random_():
 # 지출 카테고리 반환
 @app.post("/category")
 def category():
-    catrgories = ["영적", "지적", "사회적", "신체적", "낭비", "기타"]
-    
-        # JSON 형식의 응답 생성
+    # JSON 형식의 응답 생성
     response_data = {
         "version": "2.0",
         "template": {
@@ -63,7 +61,33 @@ def category():
                     "simpleText": {
                         "text": "지출 카테고리는 다음과 같습니다."
                     },
-                    "quickReplies": catrgories
+                        "quickReplies": [
+                    {
+                        "messageText": "영적",
+                        "action": "message",
+                        "label": "영적"
+                    },
+                    {
+                        "messageText": "지적",
+                        "action": "message",
+                        "label": "지적"
+                    },
+                    {
+                        "messageText": "신체적",
+                        "action": "message",
+                        "label": "신체적"
+                    },
+                    {
+                        "messageText": "사회적",
+                        "action": "message",
+                        "label": "사회적"
+                    },
+                    {
+                        "messageText": "낭비",
+                        "action": "message",
+                        "label": "낭비"
+                    }
+                    ]
                 }
             ]
         }
