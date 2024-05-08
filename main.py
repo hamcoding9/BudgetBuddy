@@ -107,7 +107,7 @@ async def process_utterance(request: Request):
     utterance = request_payload.userRequest.utterance
 
     # json 형식의 응답 생성
-    response_string = "안녕하세요 " + utterance + "님"
+    response_string = utterance + "등록 완료되었습니다. 버버두두!"
     response_data = {
         "version": "2.0",
         "template": {
