@@ -89,7 +89,6 @@ def category():
     # JSON 응답 반환
     return response_data
 
-
 # 사용자 id 반환
 @app.post("/user")
 async def process_utterance(request: Request):

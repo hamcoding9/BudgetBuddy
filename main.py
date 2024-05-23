@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI, Request
-import user_request_models
+import utils.user_request_models as user_request_models
 import utils.generator_utils as generator
 
 app = FastAPI()
