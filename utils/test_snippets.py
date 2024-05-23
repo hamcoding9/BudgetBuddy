@@ -88,3 +88,29 @@ def category():
     
     # JSON 응답 반환
     return response_data
+
+
+# 사용자 id 반환
+@app.post("/user")
+async def process_utterance(request: Request):
+    # 사용자 입력 json에서 사용자 id 받아오기
+    # 나중에 util 함수로 빼면 될듯
+    payload = await request.json()
+    request_payload = user_request_models.RequestPayload(**payload)
+    user_id = request_payload.userRequest.user.id
+
+    # json 형식의 응답 생성
+    response_string = "사용자 아이디는 " + user_id + " 입니다."
+    response_data = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": response_string
+                    }
+                }
+            ]
+        }
+    }
+    return response_data
